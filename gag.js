@@ -1,4 +1,5 @@
 const CATEGORIES = ["hammer", "pillar", "game", "tree"];
+const HEADLINES = ["Action", "Challenge", "Game", "Goals"];
 const ITEMS = [
 	["Sharing", "Praising", "Voting", "Trading", "Healing", "Cooperating", "Singing", "Subverting", "Nurturing", "Creating", "Avoiding", "Boasting", "Collecting", "Complaining", "Deceiving", "Delaying", "Destroying", "Disarming", "Embarassing", "Exploiting", "Harassing", "Haunting", "Jamming", "Melting", "Protecting", "Punishing", "Smashing", "Tempting", "Walking", "Yelling"],
 	["Sexism\n(stereotypes of and discrimination based on sexual roles)\nstrategies: education, awareness, legislation", "Colonialism\n(exploitation of one group by people of another)\nstrategies: economic, political, or cultural resistance", "Racism\n(personal and instituional discrimination based on race, belief in the superiority of one race)\nstrategies: education, diversification, legislation", "Food Politics\n(GMO crops, factory farming, low availability of quality foods in low-income neighborhoods)\nstrategies: incentives for sustainable agriculture, food co-ops", "Displacement\n(forced relocation, refugess, migrant workers)\nstrategies: security, economic developement", "Pollution\n(toxic waste, emissions, trash, unclean air)\nstrategies: clean-ups, legislation, incentives for sustainable practices", "Crime\n(theft, abuse, violence, corruption)\nstrategies: community developement, law enforcement", "Social Inequality\n(income disparity, technological divides, gentrification, lack of healthcare, targeting by police)\nstrategies: income redistribution, welfare programs, anarchosyndicalism", "Addiction\n(destructive dependence on drugs, alcohol, wealth, pleasure, etc.)\nstrategies: emotional support, counseling, peer pressure", "Disease\n(HIV/ADIS, epidemics, diabetes, cancer, healthcare)\nstrategies: medical research, government investment, public education"],
@@ -35,18 +36,14 @@ function loadCategoryCard(div, category){
 	var item = ITEMS[idx_cat][Math.floor(l*Math.random())];
 
 	var strings = item.split("\n");
-	var i = 0;
-	var inn = document.createElement('h2');
 	
-	switch(category) {
-		case "hammer": inn.innerText = "Action"; break;
-		case "pillar": inn.innerText = "Challenge"; break;
-		case "game":   inn.innerText = "Game"; break;
-		case "tree":   inn.innerText = "Goals"; break;
-	}
-	div.appendChild(inn)
+	var inner = document.createElement('h2');
+	inner.innerText = HEADLINES[idx_cat];
+	div.appendChild(inner)
+	
+	var i = 0;
 	strings.forEach(function(s){
-		var inner = document.createElement(i==0?'h3':'div');
+		inner = document.createElement(i==0?'h3':'div');
 		inner.innerText = s;
 		div.appendChild(inner);
 		i++;
