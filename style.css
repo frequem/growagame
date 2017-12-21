@@ -29,5 +29,7 @@
 }
 
 .card h2{
-	opacity: 0.3;
+	opacity: 0.1;
+	font-size: 3.5em;
+	position: absolute;
 }
