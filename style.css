@@ -9,16 +9,17 @@
 
 .card{
 	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-	transition: 0.3s;
+	transition: 0.1s;
 	font-family: sans-serif;
 	border-radius: 16px;
 	padding: 16px;
 	width: 350px;
-	height: 220px;
+	height: 200px;
 	margin: 16px;
 	cursor: pointer;
 	text-align: center;
 	display: flex;
+	position: relative;
 	align-items: center;
 	justify-content: center;
 	flex-direction: column;
@@ -29,7 +30,11 @@
 }
 
 .card h2{
-	opacity: 0.1;
+	opacity: 0.05;
 	font-size: 3.5em;
 	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
 }
