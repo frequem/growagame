@@ -36,6 +36,15 @@ function loadCategoryCard(div, category){
 
 	var strings = item.split("\n");
 	var i = 0;
+	var inn = document.createElement('h2');
+	
+	switch(category) {
+		case "hammer": inn.innerText = "Action"; break;
+		case "pillar": inn.innerText = "Challenge"; break;
+		case "game":   inn.innerText = "Game"; break;
+		case "tree":   inn.innerText = "Goals"; break;
+	}
+	div.appendChild(inn)
 	strings.forEach(function(s){
 		var inner = document.createElement(i==0?'h3':'div');
 		inner.innerText = s;
